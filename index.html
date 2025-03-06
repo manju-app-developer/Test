@@ -40,16 +40,16 @@
     <!-- Result Container -->
     <div id="result-container" style="display: none;">
         <h2>Test Completed</h2>
-        <p>Your Score: <span id="score"></span>/50</p>
+        <p>Your Score: <span id="score"></span> / <span id="total-questions"></span></p>
         <button onclick="reviewAnswers()">Review Answers</button>
-        <button onclick="location.reload()">Retry</button>
+        <button onclick="restartTest()">Retry</button>
     </div>
 
     <!-- Review Answers Section -->
     <div id="review-container" style="display: none;">
         <h2>Review Your Answers</h2>
         <div id="review-questions"></div>
-        <button onclick="location.reload()">Go Back</button>
+        <button onclick="restartTest()">Go Back</button>
     </div>
 
     <footer>
