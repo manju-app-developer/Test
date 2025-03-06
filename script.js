@@ -148,3 +148,23 @@ function submitTest() {
     document.getElementById("result-container").style.display = "block";
     document.getElementById("score").innerText = `${score} / ${questions.length}`;
 }
+
+// Review Answers - Show Correct Answers After Test Completion
+function reviewAnswers() {
+    document.getElementById("result-container").style.display = "none";
+    document.getElementById("review-container").style.display = "block";
+
+    let reviewContainer = document.getElementById("review-questions");
+    reviewContainer.innerHTML = "";
+
+    questions.forEach((question, index) => {
+        let questionElement = document.createElement("div");
+        questionElement.classList.add("review-question");
+        questionElement.innerHTML = `
+            <h3>${index + 1}. ${question.question}</h3>
+            <p><strong>Your Answer:</strong> ${selectedAnswers[index] || "Not Answered"}</p>
+            <p><strong>Correct Answer:</strong> ${question.answer}</p>
+        `;
+        reviewContainer.appendChild(questionElement);
+    });
+}
