@@ -1,17 +1,304 @@
-[
-  {
-    "question": "What is the capital of France?",
-    "options": ["Berlin", "Madrid", "Paris", "Rome"],
-    "answer": "Paris"
-  },
-  {
-    "question": "Which planet is known as the Red Planet?",
-    "options": ["Earth", "Mars", "Jupiter", "Venus"],
-    "answer": "Mars"
-  },
-  {
-    "question": "What is 2 + 2?",
-    "options": ["3", "4", "5", "6"],
-    "answer": "4"
-  }
-]
+{
+    "questions": [
+        {
+            "question": "Which of the following statements is correct?",
+            "options": [
+                "Health promotion can refer to any event, process or activity that facilitates the protection or improvement of the health status of individuals, groups, communities or populations.",
+                "The objective of health promotion is to prolong life and to improve quality of life.",
+                "Health promotion practice is often shaped by how health is conceptualized.",
+                "All of these"
+            ],
+            "answer": "All of these"
+        },
+        {
+            "question": "This approach to health promotion is synonymous with health education as it aims to increase individuals\u2019 knowledge about the causes of health and illness.",
+            "options": [
+                "Behaviour change approach",
+                "Community development approach",
+                "Biomedical approach",
+                "None of these"
+            ],
+            "answer": "Behaviour change approach"
+        },
+        {
+            "question": "Signs of mental illness are",
+            "options": [
+                "Abnormal changes in thinking, perception and judgement",
+                "Abnormal changes in feeling and memory",
+                "Both A and B",
+                "Abnormal changes in behaviour towards others"
+            ],
+            "answer": "Both A and B"
+        },
+        {
+            "question": "Psychosis is characterised by",
+            "options": [
+                "Loss of touch with reality",
+                "Prolonged emotional reaction to a given stress",
+                "Anxiety, fear, sadness, vague aches and pains",
+                "All of the above"
+            ],
+            "answer": "Loss of touch with reality"
+        },
+        {
+            "question": "The percentage of population suffering from serious mental illness is",
+            "options": [
+                "1%",
+                "5%",
+                "8%",
+                "10%"
+            ],
+            "answer": "1%"
+        },
+        {
+            "question": "A thrust area in community health is",
+            "options": [
+                "Prevention and control of communicable diseases",
+                "Prevention of blindness",
+                "Maternal and child health",
+                "School health services"
+            ],
+            "answer": "Prevention and control of communicable diseases"
+        },
+        {
+            "question": "People suffering from mental diseases in India number",
+            "options": [
+                "1 \u2013 1.5 million",
+                "6 \u2013 7 million",
+                "10 \u2013 15 million",
+                "60 \u2013 70 million"
+            ],
+            "answer": "60 \u2013 70 million"
+        },
+        {
+            "question": "What states can do to avoid addiction",
+            "options": [
+                "Adding higher tax on sweetened beverages",
+                "Benefits for organic fruits",
+                "Availability of healthy food",
+                "All of the above"
+            ],
+            "answer": "All of the above"
+        },
+        {
+            "question": "Social health hazards includes",
+            "options": [
+                "Stigma",
+                "Anti-social behavior",
+                "Higher crime records",
+                "All of the above"
+            ],
+            "answer": "All of the above"
+        },
+        {
+            "question": "What other factors increase the risk of addiction?",
+            "options": [
+                "Mental illness",
+                "Early use",
+                "Both (a) and (b)",
+                "None of the above"
+            ],
+            "answer": "Both (a) and (b)"
+        },
+        {
+            "question": "Why do some people become addicted to drugs, while others do not?",
+            "options": [
+                "Aggressive behavior in childhood",
+                "Parental monitoring",
+                "Neighborhood",
+                "All of the above"
+            ],
+            "answer": "All of the above"
+        },
+        {
+            "question": "What is a protective factor for addictions?",
+            "options": [
+                "Positive relationship",
+                "Drug experimentation",
+                "Community poverty",
+                "All of the above"
+            ],
+            "answer": "Positive relationship"
+        },
+        {
+            "question": "Types of addictive behaviour",
+            "options": [
+                "Alcoholism",
+                "Drugs-Opium",
+                "Video gaming",
+                "All of the above"
+            ],
+            "answer": "All of the above"
+        },
+        {
+            "question": "Mental health hazards include",
+            "options": [
+                "Anxiety",
+                "Depression",
+                "Organic mental disorders due to substance use",
+                "All of the above"
+            ],
+            "answer": "All of the above"
+        },
+        {
+            "question": "How is substance use disorder treated?",
+            "options": [
+                "Multiple types of treatment",
+                "Recognition of problem",
+                "Alcohol drinking",
+                "Both a and b"
+            ],
+            "answer": "Both a and b"
+        },
+        {
+            "question": "Hyper obesity value in terms of BMI",
+            "options": [
+                ">25",
+                "<25",
+                ">40",
+                "<40"
+            ],
+            "answer": ">40"
+        },
+        {
+            "question": "What is the definition of overweight?",
+            "options": [
+                "BMI > 25 kg/m2",
+                "BMI = 25 kg/m2",
+                "BMI 25-29.9 kg/m2",
+                "BMI 25-30 kg/m2"
+            ],
+            "answer": "BMI 25-29.9 kg/m2"
+        },
+        {
+            "question": "Which of the following diseases does obesity increase the risk of developing?",
+            "options": [
+                "Type 2 diabetes",
+                "Cancer",
+                "Cardiovascular disease",
+                "None of the above"
+            ],
+            "answer": "All of the above"
+        },
+        {
+            "question": "Communication is a part of which skills?",
+            "options": [
+                "Soft",
+                "Hard",
+                "Rough",
+                "Short"
+            ],
+            "answer": "Soft"
+        },
+        {
+            "question": "Ways to improve communication skills include",
+            "options": [
+                "Active listening skills",
+                "Passive listening skills",
+                "Both a & b",
+                "None of the above"
+            ],
+            "answer": "Both a & b"
+        },
+        {
+            "question": "Body language plays an important role in",
+            "options": [
+                "Communication",
+                "Judgment",
+                "Both a and b",
+                "None of the above"
+            ],
+            "answer": "Both a and b"
+        },
+        {
+            "question": "Consumption of which substance causes an increase in fat synthesis, dilation of blood vessels, low blood sugar, and stomach inflammation?",
+            "options": [
+                "Drug addiction and tobacco",
+                "Alcohol",
+                "Tobacco",
+                "Drug addiction"
+            ],
+            "answer": "Alcohol"
+        },
+        {
+            "question": "After drinking alcohol, consumption of which substance leads to death?",
+            "options": [
+                "Morphine",
+                "Opium",
+                "Barbiturate",
+                "All of these"
+            ],
+            "answer": "All of these"
+        },
+        {
+            "question": "Constituent of alcoholic beverage is",
+            "options": [
+                "Propyl alcohol",
+                "Methyl alcohol",
+                "Ethyl alcohol",
+                "Mix of all of these"
+            ],
+            "answer": "Ethyl alcohol"
+        },
+        {
+            "question": "What is defined as a regular and excessive use of a substance in spite of dangers?",
+            "options": [
+                "Use",
+                "Abuse",
+                "Substance",
+                "Dependence"
+            ],
+            "answer": "Abuse"
+        },
+        {
+            "question": "What is the goal of social engineering?",
+            "options": [
+                "Sabotage a person's social media",
+                "To gain vital personal information",
+                "To catfish someone",
+                "To build trust"
+            ],
+            "answer": "To gain vital personal information"
+        },
+        {
+            "question": "Community health aims at",
+            "options": [
+                "Better health and family planning",
+                "Better hygiene and clean environment",
+                "Removing communicable diseases",
+                "All the above"
+            ],
+            "answer": "All the above"
+        },
+        {
+            "question": "Obesity occurs due to:",
+            "options": [
+                "More consumption of calorie",
+                "More consumption of protein",
+                "More consumption of vitamins",
+                "None"
+            ],
+            "answer": "More consumption of calorie"
+        },
+        {
+            "question": "WHO principles include",
+            "options": [
+                "Development of child",
+                "Health is one of the fundamental rights",
+                "Promotion and protection of health",
+                "All of the above"
+            ],
+            "answer": "All of the above"
+        },
+        {
+            "question": "What influences your health?",
+            "options": [
+                "Heredity",
+                "Environment",
+                "Physical environment",
+                "All of the above"
+            ],
+            "answer": "All of the above"
+        }
+    ]
+}
