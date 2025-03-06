@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="user-selection">
+        <h2>Select Your Name</h2>
+        <button class="user-btn" onclick="startTest('Adithya')">Adithya</button>
+        <button class="user-btn" onclick="startTest('Tanish')">Tanish</button>
+        <button class="user-btn" onclick="startTest('Sudeep')">Sudeep</button>
+    </div>
+
+    <div id="quiz-container" style="display: none;">
+        <h2 id="user-name"></h2>
+        <div id="question-container">
+            <p id="question-text"></p>
+            <div id="options-container"></div>
+        </div>
+        <button onclick="prevQuestion()">Previous</button>
+        <button onclick="nextQuestion()">Next</button>
+        <div id="question-navigation"></div>
+        <button id="submit-btn" onclick="submitTest()">Submit Test</button>
+        <p id="result" style="display: none;"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
