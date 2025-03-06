@@ -1,123 +1,210 @@
-/* General Styles */
+/* General Page Styling */
 body {
-    font-family: Arial, sans-serif;
-    padding: 15px;
-    margin: 0;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', Arial, sans-serif;
     text-align: center;
-}
-
-/* Containers */
-#quiz-container, #result-container, #review-container {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Username Input */
-#username-selection {
-    margin-bottom: 20px;
-}
-
-/* Buttons */
-button {
-    width: 100%;
-    font-size: 15px;
-    padding: 10px;
-    margin: 5px 0;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-/* Navigation Buttons */
-.nav-button {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
-    margin: 3px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.unanswered {
-    background: #ddd;
-}
-
-.answered {
-    background: #4CAF50;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
 }
 
-/* Options */
+/* Container Styling */
+#quiz-container, #result-container {
+    display: none;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Heading Styling */
+h1, h2, h3 {
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Username Selection Styling */
+#username-selection {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+.name-option {
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.name-option:hover {
+    background: #ff9900;
+    transform: scale(1.1);
+}
+
+/* Question Styling */
+#question-text {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+/* Options Styling */
 .option {
     display: block;
-    background: #e0e0e0;
-    text-align: left;
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.option:hover {
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .option.selected {
-    background: #4CAF50;
+    background: #4caf50;
+    border: 2px solid #fff;
+}
+
+/* Timer Styling */
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+#time-left {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 0px 0px 10px #ffcc00;
+}
+
+/* Navigation Buttons */
+#question-navigation {
+    margin-top: 20px;
+}
+
+.nav-button {
+    margin: 3px;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    width: 35px;
+    text-align: center;
+}
+
+.nav-button:hover {
+    transform: scale(1.1);
+}
+
+.answered {
+    background: #4caf50;
+    color: white;
+}
+
+.unanswered {
+    background: #f44336;
     color: white;
 }
 
 /* Next and Submit Buttons */
 #next-btn, #submit-btn {
-    background: #007BFF;
+    margin-top: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
     color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#next-btn {
+    background: blue;
 }
 
 #submit-btn {
-    background: #28a745;
+    background: green;
 }
 
-/* Timer */
-#time-left {
-    font-size: 18px;
+#next-btn:hover {
+    background: darkblue;
+}
+
+#submit-btn:hover {
+    background: darkgreen;
+}
+
+/* Result Container */
+#result-container {
+    padding: 20px;
+}
+
+#score {
+    font-size: 24px;
     font-weight: bold;
-    color: #d9534f;
+    color: #ffcc00;
 }
 
-/* Review Section */
-.review-question {
-    background: #f9f9f9;
-    padding: 10px;
-    margin: 10px 0;
-    border-left: 5px solid #007BFF;
-    text-align: left;
+/* Retry Button */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
-.review-question p {
-    margin: 5px 0;
+button:hover {
+    transform: scale(1.1);
 }
 
-/* Responsive Design */
+/* Mobile Responsive Design */
 @media (max-width: 600px) {
-    #quiz-container, #result-container, #review-container {
-        width: 90%;
+    body {
+        padding: 10px;
+    }
+
+    #quiz-container, #result-container {
+        width: 100%;
         padding: 15px;
     }
 
-    .nav-button {
-        width: 30px;
-        height: 30px;
-        font-size: 12px;
-    }
-
-    button {
+    .name-option, .option, #next-btn, #submit-btn, button {
+        width: 100%;
         font-size: 14px;
-        padding: 8px;
     }
 }
