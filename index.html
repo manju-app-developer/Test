@@ -4,78 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mock Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-        #quiz-container, #result-container {
-            display: none;
-            margin-top: 20px;
-        }
-        .option {
-            display: block;
-            margin: 5px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-        .option:hover {
-            background-color: #ddd;
-        }
-        #question-navigation {
-            margin-top: 20px;
-        }
-        .nav-button {
-            margin: 3px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            cursor: pointer;
-            display: inline-block;
-            width: 30px;
-            text-align: center;
-        }
-        .answered {
-            background-color: #a0e0a0;
-        }
-        .unanswered {
-            background-color: #f0a0a0;
-        }
-        #next-btn {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: blue;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        #submit-btn {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: green;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <h1>Mock Test</h1>
 
+    <!-- Loader -->
+    <div id="loader" style="display: none;">Loading...</div>
+
     <!-- Username Selection -->
     <div id="username-selection">
-        <h3>Select your name:</h3>
-        <button class="name-option" onclick="startTest('Adithya')">Adithya</button>
+        <h3>Select your name or enter manually:</h3>
         <button class="name-option" onclick="startTest('Tanish')">Tanish</button>
         <button class="name-option" onclick="startTest('Sudeep')">Sudeep</button>
+        <button class="name-option" onclick="startTest('Adithya')">Adithya</button>
+        <br><br>
+        <input type="text" id="username-input" placeholder="Enter your name">
+        <button id="start-btn" onclick="startTest()">Start Test</button>
     </div>
 
     <!-- Quiz Container -->
-    <div id="quiz-container">
+    <div id="quiz-container" style="display: none;">
         <h2>Welcome, <span id="username"></span></h2>
+        <div id="timer">Time Left: <span id="time-left">60:00</span></div>
         <p id="question-text"></p>
         <div id="options-container"></div>
 
@@ -86,7 +38,7 @@
     </div>
 
     <!-- Result Container -->
-    <div id="result-container">
+    <div id="result-container" style="display: none;">
         <h2>Test Completed</h2>
         <p>Your Score: <span id="score"></span>/50</p>
         <button onclick="location.reload()">Retry</button>
