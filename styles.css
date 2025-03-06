@@ -6,17 +6,25 @@ body {
     padding: 0;
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-/* Container Styling */
-#quiz-container, #result-container {
+/* Main Container Styling */
+#quiz-container, #result-container, #username-selection {
     display: none;
     max-width: 600px;
+    width: 90%;
     margin: 20px auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease-in-out;
 }
 
 /* Heading Styling */
@@ -25,25 +33,20 @@ h1, h2, h3 {
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Username Selection Styling */
+/* Username Selection */
 #username-selection {
     max-width: 500px;
-    margin: 40px auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
 }
 
 .name-option {
-    padding: 12px 20px;
+    padding: 14px 22px;
     margin: 10px;
     font-size: 16px;
     font-weight: bold;
     background: #ffcc00;
     color: #333;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -55,25 +58,26 @@ h1, h2, h3 {
 
 /* Question Styling */
 #question-text {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 15px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 /* Options Styling */
 .option {
     display: block;
     width: 100%;
-    padding: 12px;
-    margin: 5px 0;
+    padding: 14px;
+    margin: 6px 0;
     font-size: 16px;
     font-weight: bold;
     background: rgba(255, 255, 255, 0.2);
     color: white;
     border: 2px solid transparent;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -89,38 +93,43 @@ h1, h2, h3 {
 
 /* Timer Styling */
 #timer {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     background: rgba(255, 255, 255, 0.2);
-    padding: 8px 15px;
-    border-radius: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
     display: inline-block;
     margin-bottom: 15px;
 }
 
 #time-left {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     color: #ffcc00;
-    text-shadow: 0px 0px 10px #ffcc00;
+    text-shadow: 0px 0px 12px #ffcc00;
 }
 
-/* Navigation Buttons */
+/* Question Navigation Buttons */
 #question-navigation {
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
 }
 
 .nav-button {
-    margin: 3px;
-    padding: 8px;
+    width: 40px;
+    height: 40px;
     font-size: 16px;
     font-weight: bold;
     border: 2px solid white;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    width: 35px;
     text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
 }
 
 .nav-button:hover {
@@ -139,31 +148,31 @@ h1, h2, h3 {
 
 /* Next and Submit Buttons */
 #next-btn, #submit-btn {
-    margin-top: 10px;
-    padding: 12px 20px;
-    font-size: 16px;
+    margin-top: 12px;
+    padding: 14px 22px;
+    font-size: 18px;
     font-weight: bold;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
 
 #next-btn {
-    background: blue;
+    background: #007bff;
 }
 
 #submit-btn {
-    background: green;
+    background: #28a745;
 }
 
 #next-btn:hover {
-    background: darkblue;
+    background: #0056b3;
 }
 
 #submit-btn:hover {
-    background: darkgreen;
+    background: #1e7e34;
 }
 
 /* Result Container */
@@ -172,18 +181,18 @@ h1, h2, h3 {
 }
 
 #score {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     color: #ffcc00;
 }
 
 /* Retry Button */
 button {
-    padding: 10px 15px;
+    padding: 12px 18px;
     font-size: 16px;
     font-weight: bold;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -195,16 +204,22 @@ button:hover {
 /* Mobile Responsive Design */
 @media (max-width: 600px) {
     body {
-        padding: 10px;
+        padding: 15px;
     }
 
     #quiz-container, #result-container {
         width: 100%;
-        padding: 15px;
+        padding: 18px;
     }
 
     .name-option, .option, #next-btn, #submit-btn, button {
         width: 100%;
+        font-size: 15px;
+    }
+
+    .nav-button {
+        width: 35px;
+        height: 35px;
         font-size: 14px;
     }
 }
