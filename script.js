@@ -2,25 +2,36 @@ let questions = [];
 let currentQuestionIndex = 0;
 let selectedAnswers = {};
 let userName = "";
+let timerInterval;
+const totalTime = 60 * 60; // 1 hour in seconds
+let timeLeft = totalTime;
 
-// Load questions.json
+// Load questions from JSON file
 fetch("questions.json")
     .then(response => response.json())
     .then(data => {
         questions = data.questions;
-        displayQuestion();
         generateNavigationButtons();
-    });
+    })
+    .catch(error => console.error("Error loading questions:", error));
 
-// Start test with selected username
-function startTest(name) {
-    userName = name;
-    document.getElementById("username").innerText = name;
+// Start the test
+function startTest(name = null) {
+    userName = name || document.getElementById("username-input").value.trim();
+    if (!userName) {
+        alert("Please enter or select a name to start the test.");
+        return;
+    }
+
+    document.getElementById("username").innerText = userName;
     document.getElementById("username-selection").style.display = "none";
     document.getElementById("quiz-container").style.display = "block";
+
+    displayQuestion();
+    startTimer();
 }
 
-// Display question
+// Display the current question
 function displayQuestion() {
     if (currentQuestionIndex >= questions.length) return;
 
@@ -35,32 +46,30 @@ function displayQuestion() {
         optionButton.classList.add("option");
         optionButton.innerText = option;
         optionButton.onclick = () => selectAnswer(option);
+        
+        // Highlight selected answer
         if (selectedAnswers[currentQuestionIndex] === option) {
-            optionButton.style.backgroundColor = "#a0e0a0"; // Highlight selected option
+            optionButton.classList.add("selected");
         }
+
         optionsContainer.appendChild(optionButton);
     });
 
     updateNavigationButtons();
+    updateButtonsVisibility();
 }
 
-// Select an answer
+// Handle answer selection
 function selectAnswer(answer) {
     selectedAnswers[currentQuestionIndex] = answer;
-    displayQuestion(); // Refresh question UI
+    displayQuestion(); // Refresh UI to highlight selection
 }
 
-// Move to next question
+// Move to the next question
 function nextQuestion() {
     if (currentQuestionIndex < questions.length - 1) {
         currentQuestionIndex++;
         displayQuestion();
-    }
-
-    // Show submit button on last question
-    if (currentQuestionIndex === questions.length - 1) {
-        document.getElementById("next-btn").style.display = "none";
-        document.getElementById("submit-btn").style.display = "block";
     }
 }
 
@@ -97,10 +106,38 @@ function updateNavigationButtons() {
     });
 }
 
-// Submit test and calculate score
-function submitTest() {
-    let score = 0;
+// Update visibility of Next and Submit buttons
+function updateButtonsVisibility() {
+    document.getElementById("next-btn").style.display = currentQuestionIndex < questions.length - 1 ? "block" : "none";
+    document.getElementById("submit-btn").style.display = currentQuestionIndex === questions.length - 1 ? "block" : "none";
+}
 
+// Start the countdown timer
+function startTimer() {
+    updateTimerDisplay();
+    timerInterval = setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            submitTest();
+        } else {
+            timeLeft--;
+            updateTimerDisplay();
+        }
+    }, 1000);
+}
+
+// Update the timer display
+function updateTimerDisplay() {
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+    document.getElementById("time-left").innerText = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+}
+
+// Submit the test and calculate the score
+function submitTest() {
+    clearInterval(timerInterval);
+
+    let score = 0;
     questions.forEach((question, index) => {
         if (selectedAnswers[index] === question.answer) {
             score++;
@@ -109,5 +146,5 @@ function submitTest() {
 
     document.getElementById("quiz-container").style.display = "none";
     document.getElementById("result-container").style.display = "block";
-    document.getElementById("score").innerText = score;
+    document.getElementById("score").innerText = `${score} / ${questions.length}`;
 }
