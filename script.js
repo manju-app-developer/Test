@@ -46,7 +46,7 @@ function displayQuestion() {
         optionButton.classList.add("option");
         optionButton.innerText = option;
         optionButton.onclick = () => selectAnswer(option);
-        
+
         // Highlight selected answer
         if (selectedAnswers[currentQuestionIndex] === option) {
             optionButton.classList.add("selected");
@@ -69,6 +69,14 @@ function selectAnswer(answer) {
 function nextQuestion() {
     if (currentQuestionIndex < questions.length - 1) {
         currentQuestionIndex++;
+        displayQuestion();
+    }
+}
+
+// Move to the previous question
+function previousQuestion() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
         displayQuestion();
     }
 }
@@ -106,8 +114,9 @@ function updateNavigationButtons() {
     });
 }
 
-// Update visibility of Next and Submit buttons
+// Update visibility of Previous, Next, and Submit buttons
 function updateButtonsVisibility() {
+    document.getElementById("prev-btn").style.display = currentQuestionIndex > 0 ? "block" : "none";
     document.getElementById("next-btn").style.display = currentQuestionIndex < questions.length - 1 ? "block" : "none";
     document.getElementById("submit-btn").style.display = currentQuestionIndex === questions.length - 1 ? "block" : "none";
 }
@@ -146,7 +155,7 @@ function submitTest() {
 
     document.getElementById("quiz-container").style.display = "none";
     document.getElementById("result-container").style.display = "block";
-    document.getElementById("score").innerText = `${score} / ${questions.length}`;
+    document.getElementById("score").innerText = `Your Score: ${score} / ${questions.length}`;
 }
 
 // Review Answers - Show Correct Answers After Test Completion
@@ -167,4 +176,19 @@ function reviewAnswers() {
         `;
         reviewContainer.appendChild(questionElement);
     });
+}
+
+// Restart the test
+function restartTest() {
+    selectedAnswers = {};
+    currentQuestionIndex = 0;
+    timeLeft = totalTime;
+
+    document.getElementById("review-container").style.display = "none";
+    document.getElementById("result-container").style.display = "none";
+    document.getElementById("quiz-container").style.display = "block";
+
+    generateNavigationButtons();
+    displayQuestion();
+    startTimer();
 }
